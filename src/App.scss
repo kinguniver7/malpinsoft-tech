@@ -1,0 +1,103 @@
+@import "scss/variables";
+
+
+body{
+  background-color: #f6f6f6;
+}
+
+
+.MuiDrawer-paper{
+  width: $drawer-width;
+}
+
+/*APP BAR*/
+.app-bar{
+  background-color:#fff !important;
+}
+.header-top-toolbar{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: $colorMainMenu;  
+
+  background-image: url(assets/img/bg_fluid_1.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.img-idea{
+  margin-top: -12px;
+}
+
+
+/*MAIN CONTENT*/
+.main-content{
+  flex-grow: 1;
+  padding-left: calc(#{$drawer-width} - 20px);  
+  padding-top: 5em;
+}
+
+/*LEFT DRAWER*/
+.MuiPaper-root.MuiDrawer-paper{
+  box-shadow: 0px 2px 4px -2px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  background-color: $colorSideMenu;
+  background-image: url(assets/img/bg_fluid_2.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+.left-drawer__auth-block{
+  display: flex;
+  height: 112px;
+  flex-direction: row;
+  justify-content:center;
+
+}
+.auth-block__sign-up{
+  align-self:center;
+}
+
+.left-drawer__auth-header_divider{
+ 	//box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.14)
+}
+
+/*TREE MENU*/
+.MuiTreeView-root.content-tree-menu{
+  //height: 264px;
+  flex-grow: 1;
+  max-width: $drawer-width;
+  padding: $spacing;
+}
+.tree-menu__item{
+  & div{
+    margin-bottom: $spacing;
+    
+  }
+  & div:hover{
+    
+  }
+}
+
+/*BUTTONS*/
+.sign-up{
+  white-space: nowrap;
+}
+
+/*NavBreadcrumb*/
+.main-content__nav-breadcrumb{
+  padding: $spacing;
+}
+.MuiDivider-root.nav-breadcrumb__divider{
+  margin-top: $spacing;
+}
+
+@media (max-width: $sm){
+  .main-content{
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: $sm){
+  .MuiAppBar-root.app-bar{
+    width: calc(100% - #{$drawer-width});
+    margin-left: $drawer-width;
+  }
+}
